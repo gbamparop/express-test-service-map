@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Page</title>
+    <script src="../js/elastic-apm-rum.umd.js" crossorigin></script>
+    <script>
+        elasticApm.init({
+            serviceName: 'test-fe',
+            serverUrl: 'your-server-url',
+            environment: 'dev'
+        })
+    </script>
+</head>
+
+<body>
+    <h1>Page</h1>
+    <script>
+        const callApi = async () => {
+            const response = await fetch("http://localhost:3000");
+            const json = await response.json();
+        }
+        callApi();
+    </script>
+</body>
